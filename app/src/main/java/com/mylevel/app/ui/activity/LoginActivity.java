@@ -7,12 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.mylevel.app.R;
 import com.mylevel.app.helper.FragmentUtil;
+import com.mylevel.app.ui.fragment.EmailVerificationFragment;
 import com.mylevel.app.ui.fragment.ForgotPasswordFragment;
 import com.mylevel.app.ui.fragment.LoginFragment;
 import com.mylevel.app.ui.fragment.ResetPasswordFragment;
 import com.mylevel.app.ui.fragment.SignupFragment;
 
-public class LoginActivity extends AppCompatActivity implements LoginFragment.OnLoginInteractionListener, SignupFragment.OnSignupInteractionListener, ForgotPasswordFragment.OnForgotPasswordInteraction, ResetPasswordFragment.OnResetPasswordInteraction {
+public class LoginActivity extends AppCompatActivity implements LoginFragment.OnLoginInteractionListener, SignupFragment.OnSignupInteractionListener, ForgotPasswordFragment.OnForgotPasswordInteraction, EmailVerificationFragment.OnEmailVerificationInteraction {
 
 
     public static Intent getIntent(Context context){
@@ -28,17 +29,13 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
 
     }
 
-    @Override
-    public void onFragmentInteraction() {
-
-    }
 
     /**
      * Callback function from @{@link LoginFragment}
      */
     @Override
     public void onLogin() {
-
+        startActivity(HomeActivity.getIntent(this));
     }
 
     @Override
@@ -59,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
      */
     @Override
     public void onSignup() {
-
+        startActivity(HomeActivity.getIntent(this));
     }
 
     @Override
@@ -72,12 +69,17 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
      */
     @Override
     public void onSkip() {
-
+        startActivity(HomeActivity.getIntent(this));
     }
 
     @Override
     public void onForgotPassword() {
-        FragmentUtil.changeFragment(getSupportFragmentManager(),ResetPasswordFragment.newInstance(),true,true);
+        FragmentUtil.changeFragment(getSupportFragmentManager(),EmailVerificationFragment.newInstance(),true,true);
 
+    }
+
+    @Override
+    public void onVerificationCodeSubmission() {
+        startActivity(HomeActivity.getIntent(this));
     }
 }

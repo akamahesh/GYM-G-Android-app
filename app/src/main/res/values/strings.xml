@@ -5,6 +5,14 @@
     <string name="title_reset_password_code">Reset Password code</string>
     <string name="title_signup">Sign Up</string>
     <string name="title_forgot_password">Forgot your Password</string>
+    <string name="title_email_verification">Email Verification</string>
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_my_schedule">My Schedule</string>
+    <string name="title_my_profile">My Profile</string>
+    <string name="title_more">More</string>
 
     <string name="text_start">Start</string>
     <string name="skip">Skip</string>
@@ -36,9 +44,10 @@
 
 
     <string name="confirmation_code">Confirmation code</string>
-    <string name="check_your_email">Check your emai, we have sent you a reset confirmation code. Please enter the code.</string>
+    <string name="check_your_email">Check your email, we have sent you a reset confirmation code. Please enter the code.</string>
+    <string name="we_have_sent_you_a_verification">We have sent you a verification code on your email. Please enter the code below</string>
     <string name="submit">Submit</string>
-
+    <string name="verification">Verification</string>
 
 
 </resources>

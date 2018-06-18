@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.mylevel.app.R;
+import com.mylevel.app.ui.activity.HomeActivity;
 
 
 public class LoginFragment extends Fragment {
@@ -135,18 +136,21 @@ public class LoginFragment extends Fragment {
      * Facebook Login
      */
     private void onFacebook() {
+        startActivity(HomeActivity.getIntent(getContext()));
     }
 
     /**
      * Google Login
      */
     private void onGoogle() {
+        startActivity(HomeActivity.getIntent(getContext()));
     }
 
     /**
      * Instagram Login
      */
     private void onInstagram() {
+        startActivity(HomeActivity.getIntent(getContext()));
     }
 
     /**
