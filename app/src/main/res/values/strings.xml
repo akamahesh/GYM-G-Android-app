@@ -31,7 +31,7 @@
     <string name="pssword_match">Password Match</string>
 
     <string name="send">Send</string>
-    <string name="forgot_your_password">Forgot your Password</string>
+    <string name="forgot_your_password">Forgot your Password?</string>
     <string name="enter_your_registered">Enter your registered Email below to receive your password reset code.</string>
 
 

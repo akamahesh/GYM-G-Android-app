@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:layout_below="@+id/topbar"
+    android:fillViewport="true"
+    tools:showIn="@layout/fragment_signup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/profile_size"
+            android:layout_height="@dimen/profile_size"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_profile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edit_text_margin"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                style="@style/EditTextStyle"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_weight="5"
+                android:drawableStart="@drawable/ic_name"
+                android:hint="@string/placeholder_first_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edtLastName"
+                style="@style/EditTextStyle"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_weight="5"
+                android:drawableStart="@drawable/ic_name"
+                android:hint="@string/placeholder_last_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/edit_text_margin"
+            android:drawableStart="@drawable/ic_mail"
+            android:hint="@string/placeholder_email"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            style="@style/EditTextStyle"
+            android:layout_marginTop="@dimen/edit_text_margin"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/placeholder_password"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            style="@style/EditTextStyle"
+            android:layout_marginBottom="@dimen/edit_text_margin"
+            android:layout_marginTop="@dimen/edit_text_margin"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/placeholder_confirm_password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:id="@+id/vTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_selected" />
+
+            <TextView
+                android:id="@+id/ivTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_5"
+                android:fontFamily="@font/segoe_normal"
+                android:padding="@dimen/dp_5"
+                android:text="@string/text_i_accept"
+                android:textColor="@color/textColorDarkPrimary"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnSignup"
+            style="@style/ButtonStyle"
+            android:layout_marginBottom="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:text="@string/signup" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/segoe_normal"
+            android:text="@string/or_connect_via"
+            android:textColor="@color/textColorDarkDisabled"
+            android:textSize="@dimen/text_size_small" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_instagram" />
+
+            <ImageView
+                android:id="@+id/ivFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_facebook" />
+
+            <ImageView
+                android:id="@+id/ivGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_google" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:fontFamily="@font/segoe_normal"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/textColorDarkPrimary"
+            android:textSize="@dimen/text_size_medium" />
+
+
+    </LinearLayout>
+
+</ScrollView>

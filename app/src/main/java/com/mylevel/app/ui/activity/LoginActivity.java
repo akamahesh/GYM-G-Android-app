@@ -41,21 +41,30 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
 
     }
 
-    /**
-     * Callback function from @{@link LoginFragment}
-     */
     @Override
-    public void onForgotPassord() {
+    public void gotoForgotPassword() {
         FragmentUtil.changeFragment(getSupportFragmentManager(),ForgotPasswordFragment.newInstance(),true,true);
+
     }
+
+    @Override
+    public void gotoSignup() {
+        FragmentUtil.changeFragment(getSupportFragmentManager(),SignupFragment.newInstance(),true,true);
+
+    }
+
 
     /**
      * Callback function from @{@link LoginFragment}
      */
     @Override
     public void onSignup() {
-        FragmentUtil.changeFragment(getSupportFragmentManager(),SignupFragment.newInstance(),true,true);
 
+    }
+
+    @Override
+    public void gotoLogin() {
+        getSupportFragmentManager().popBackStack();
     }
 
     /**
@@ -63,6 +72,12 @@ public class LoginActivity extends AppCompatActivity implements LoginFragment.On
      */
     @Override
     public void onSkip() {
+
+    }
+
+    @Override
+    public void onForgotPassword() {
+        FragmentUtil.changeFragment(getSupportFragmentManager(),ResetPasswordFragment.newInstance(),true,true);
 
     }
 }

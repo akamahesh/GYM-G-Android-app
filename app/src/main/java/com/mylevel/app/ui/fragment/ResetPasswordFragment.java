@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.mylevel.app.R;
 
+import java.util.Objects;
+
 
 public class ResetPasswordFragment extends Fragment {
 
@@ -19,12 +21,23 @@ public class ResetPasswordFragment extends Fragment {
     }
 
 
-    public static ResetPasswordFragment newInstance(String param1, String param2) {
+    public static ResetPasswordFragment newInstance() {
         ResetPasswordFragment fragment = new ResetPasswordFragment();
         Bundle args = new Bundle();
 
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnResetPasswordInteraction) {
+            mListener = (OnResetPasswordInteraction) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnResetPasswordInteraction");
+        }
     }
 
     @Override
@@ -39,26 +52,19 @@ public class ResetPasswordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reset_password, container, false);
+        View view = inflater.inflate(R.layout.fragment_reset_password, container, false);
+        initViews(view);
+        return view;
     }
 
-
-    public void onButtonPressed() {
-        if (mListener != null) {
-            mListener.onFragmentInteraction();
-        }
+    private void initViews(View view) {
+        view.findViewById(R.id.ivBack).setOnClickListener(v->onBack());
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnResetPasswordInteraction) {
-            mListener = (OnResetPasswordInteraction) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnResetPasswordInteraction");
-        }
+    private void onBack() {
+        Objects.requireNonNull(getFragmentManager()).popBackStack();
     }
+
 
     @Override
     public void onDetach() {

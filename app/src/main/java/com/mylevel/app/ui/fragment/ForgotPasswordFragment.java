@@ -6,13 +6,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.mylevel.app.R;
+
+import java.util.Objects;
 
 
 public class ForgotPasswordFragment extends Fragment {
 
     private OnForgotPasswordInteraction mListener;
+    private EditText edtEmail;
 
     public ForgotPasswordFragment() {
         // Required empty public constructor
@@ -28,28 +32,6 @@ public class ForgotPasswordFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forgot_password, container, false);
-    }
-
-
-    public void onButtonPressed() {
-        if (mListener != null) {
-            mListener.onFragmentInteraction();
-        }
-    }
-
-    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnForgotPasswordInteraction) {
@@ -61,6 +43,43 @@ public class ForgotPasswordFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_forgot_password, container, false);
+        initViews(view);
+        return view;
+    }
+
+    private void initViews(View view) {
+        edtEmail = view.findViewById(R.id.edtEmail);
+        view.findViewById(R.id.btnSend).setOnClickListener(v-> onSend());
+        view.findViewById(R.id.ivBack).setOnClickListener(v-> onBack());
+    }
+
+    private void onBack() {
+        Objects.requireNonNull(getFragmentManager()).popBackStack();
+    }
+
+    private void onSend() {
+        if(mListener!=null){
+            mListener.onForgotPassword();
+        }
+    }
+
+
+
+
+
+    @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
@@ -68,6 +87,6 @@ public class ForgotPasswordFragment extends Fragment {
 
 
     public interface OnForgotPasswordInteraction {
-        void onFragmentInteraction();
+        void onForgotPassword();
     }
 }

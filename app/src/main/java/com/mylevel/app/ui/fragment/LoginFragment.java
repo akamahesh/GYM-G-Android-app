@@ -66,17 +66,14 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_login, container, false);
 
         initViews(view);
         spinnerLang.setOnItemSelectedListener(onItemSelectedListener);
 
-        //Creating the ArrayAdapter instance having the bank name list
         ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(),android.R.layout.simple_spinner_item,languages);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        arrayAdapter.setDropDownViewResource(R.layout.row_spinner_dropdown_item);
         spinnerLang.setAdapter(arrayAdapter);
-
         return view;
     }
 
@@ -130,7 +127,7 @@ public class LoginFragment extends Fragment {
      */
     private void onSignup() {
         if (mListener != null) {
-            mListener.onSignup();
+            mListener.gotoSignup();
         }
     }
 
@@ -157,7 +154,7 @@ public class LoginFragment extends Fragment {
      */
     private void onForgotPassword() {
         if (mListener != null) {
-            mListener.onForgotPassord();
+            mListener.gotoForgotPassword();
         }
     }
 
@@ -184,8 +181,8 @@ public class LoginFragment extends Fragment {
 
     public interface OnLoginInteractionListener {
         void onLogin();
-        void onForgotPassord();
-        void onSignup();
+        void gotoForgotPassword();
+        void gotoSignup();
         void onSkip();
     }
 }
