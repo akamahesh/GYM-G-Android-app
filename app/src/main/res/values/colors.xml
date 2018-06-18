@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#38c3aa</color>
+    <color name="colorPrimaryDark">#38c3aa</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!-- Dark Text Color for Light Background -->
+    <color name="textColorDarkPrimary">#DE000000</color> <!--DE for %87 opacity-->
+    <color name="textColorDarkSecondary">#8A000000</color> <!--8A for %54 opacity-->
+    <color name="textColorDarkDisabled">#61000000</color> <!--61 for %38 opacity-->
+
+    <color name="edit_text_border_color">#61000000</color>
+
+    <color name="dotEnabled">#38c3aa</color>
+    <color name="dotDisabled">#61000000</color>
+
+    <!-- White Text Color for Dark Background -->
+    <color name="textLightPrimary">#FFFFFF</color> <!--%100 opacity-->
+    <color name="textLightSecondary">#B2FFFFFF</color> <!--B2 for %70 opacity-->
+    <color name="textLightDisabled">#80FFFFFF</color> <!--80 for %50 opacity-->
+    <color name="textLightDisabledDEPRECATED">#4CFFFFFF</color> <!--4C for %30 opacity-->
+
+
+    <color name="colorWindowWhite">#FFFFFF</color> <!--%100 opacity-->
+
+
+
+    <array name="array_dot_active">
+        <item>@color/dotEnabled</item>
+        <item>@color/dotEnabled</item>
+        <item>@color/dotEnabled</item>
+        <item>@color/dotEnabled</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dotDisabled</item>
+        <item>@color/dotDisabled</item>
+        <item>@color/dotDisabled</item>
+        <item>@color/dotDisabled</item>
+    </array>
+
+</resources>
